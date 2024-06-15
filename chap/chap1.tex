@@ -1,0 +1,54 @@
+\chapter{引言}
+\label{chap:introduction}
+
+对论文写作而言，LaTex在公式图表的插入及引用、参考文献的引用和排版等方面相较word更为便捷，然而北京大学博士研究生学位论文的官方模板是以word形式发布的，未有官方的LaTex模板。本人进行论文写作时，找到一些符合北大博士论文要求的LaTex模板，主要是pkuthss系列和北京大学工学院的模板。
+
+本模板主要以pkuthss v1.9.2为基础，也融合了工学院模板的一些优点，主要特点是对“著者-出版年制”的参考文献引用方式做了更具体的设置，较pkuthss v1.9.2原始模板更规范。本模板更像是本人使用pkuthss的经验总结，可以作为使用者的一种参考，模板中的一些缺点也将在后续章节说明。LaTex有许多使用技巧，使用者可根据需求搜索攻略，期待后来人能将该模板不断完善。
+
+\section{参考模板}
+
+提供三个北大博士学位论文的LaTex模板。
+
+\begin{enumerate}[itemindent=0.3em]     % 用enumerate环境可能需要控制缩进量
+    \item pkuthss v1.9.2：https://github.com/iofu728/pkuthss
+    \item pkuthss v1.9.4：https://github.com/zhiyunyao/pkuthss/tree/lite。该模板发布于2024年4月，推荐使用这一最新模板，将本模板作为参考即可。
+    \item 工学院模板：https://www.coe.pku.edu.cn/service/biyedb/11187.html。本模板中研究生成果页参考了该模板。
+\end{enumerate}
+
+\section{编译要求}
+
+本模板仅支持UTF-8文件编码和XeLaTex编译。请确保所有文件为UTF-8编码，编译时请修改编译器为XeLaTex。
+
+\section{环境配置}
+
+\subsection{在VSCode使用}
+
+在本地环境下进行写作，推荐使用VSCode。
+
+环境配置：安装TeX Live（可能需要8G左右的空间），在VSCode中配置LaTex Workshop扩展。相关方法网上已有许多。
+
+需要注意的是，如果已安装了其他Tex系统（比如CTEX），可能与TeX Live冲突，VSCode编译时可能优先选择其他系统。使用者可以先试一下能否编译成功，再决定是否安装Tex Live。如安装Tex Live后仍编译不成功，需要卸载有冲突的Tex系统。
+
+使用模板：在GitHub上下载该项目的zip压缩包，解压后在VSCode中打开\texttt{main.tex}，用XeLaTex编译即可。
+
+\subsection{在overleaf使用}
+
+如不想在进行本地环境配置，也可以选择overleaf进行在线写作，只需将本模板包的所有文件copy到新建的项目里，或将GitHub下载的zip包上传到oveleaf中，用XeLaTex编译\texttt{main.tex}即可。
+
+需要注意的是，overleaf对编译超过20 s的项目要收费，必须开通会员才可使用。截止2024年6月，学生会员的价格是9 $\$$ /月。
+
+本模板项目较小，编译时间暂不到20 s，如编译一篇学位论文则必然超过20 s。
+
+\section{本文档行文结构}
+
+本说明文档结构如下：
+
+第\ref{chap:introduction}章将介绍几种北大学位论文LaTex模板，并介绍本模板的使用方法。
+
+第\ref{chap:reference}章将介绍本模板中参考文献的引用和排版方式。
+
+第\ref{chap:fig_tab}章将介绍图表的插入、引用方式及使用中的问题和技巧。
+
+第\ref{chap:equation}章将介绍公式的插入、引用方式及使用中的问题和技巧。
+
+第\ref{chap:problem}章将介绍本模板存在的一些问题。

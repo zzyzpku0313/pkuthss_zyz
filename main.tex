@@ -1,0 +1,134 @@
+% Copyright (c) 2008-2009 solvethis
+% Copyright (c) 2010-2016,2018-2019,2022 Casper Ti. Vector
+% Copyright (c) 2021 Kurapica
+% Copyright (c) 2022 iofu728
+% Overleaf version.
+
+%*********************************************************************
+% pkuthss_zyz: 北京大学研究生学位论文模板_ZYZ修改及使用心得
+% 2024/06/15
+%
+% 重要提示：
+%   1. 当前模板基于pkuthss v1.9.2，也参考了pkuthss v1.9.2和北京大学工学院的LaTex模板
+%   2. 当前overleaf版符合研究生学位论文要求，可通过图书馆审核
+%   3. 请使用UTF-8编码，XeLaTeX方式编译
+%   4. 请仔细阅读用户文档
+%   5. 修改、使用、发布本文档类请务必遵循LaTeX Project Public License和知识共享4.0
+%   6. 感谢github作者 @iofu728 @zhiyunyao 提供了非常漂亮的pkuthss模板
+%*********************************************************************
+
+%*********************************************************************
+
+%*********************************************************************
+
+\documentclass[UTF8,fontset=fandol,ugly,language=chinese]{pkuthss}
+  % 学位论文模式  ugly    (默认打开，请保留)
+  % 盲审模式     blind   (默认关闭)
+  % 语言        language (默认chinese | english)
+  % 字体库       fontset
+  %   auto | windows | windows@overleaf | mac | fandol | ubuntu | none
+  % windows*, mac为商业字体，如需使用请遵循相应版权协议(默认下overleaf中不可用)
+  % fandol与windows效果相近，但字符库偏少，推荐使用(默认);
+  % ubuntu字体效果偏差较大; 设为none时需自行配置字体集;
+
+
+% --- 参考文献遵循GB/T 7714-2015标准，使用biblatex-gb7714-2015 宏包。 ---
+% 1.此处使用顺序编码制 gb7714-2015
+%%% \usepackage[backend=biber, style=gb7714-2005]{biblatex}
+% \usepackage[backend=biber, style=gb7714-2015, gbnamefmt=lowercase]{biblatex}
+% 2.此处使用著者-出版年制则 gb7714-2015ay。
+%   使用 著者-出版年制 (添加了许多选项以调整引用格式、字体、文献排版顺序等，请自行参考GB/T 7714-2015标准biblatex 宏包的说明文档了解选项内容)
+ \usepackage[backend = biber, style = gb7714-2015ay, gbnamefmt=familyahead, gbtype=false, maxcitenames=2, mincitenames=1, uniquelist=false, gbcitelabel=parensqj]{biblatex}
+ \DefineBibliographyStrings{english}{
+ andincite = { and }, %判断为英文文献时两个作者使用 A and B 
+ andincitecn = { 和 }, %判断为中文文献时两个作者使用 张三 和 李四 
+ }
+%\DeclareDelimFormat[textcite,citet, citep]{andothersdelim}{}%\space
+
+% ------ ZYZ：设置英文断行不要断字 ------
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+% 示例文档用包和设定，该段均可移除.
+\usepackage{pdfpages}
+\usepackage{enumitem,fancyvrb}
+\usepackage{booktabs,multirow,longtable,makecell} % 表格相关
+\RecustomVerbatimEnvironment{Verbatim}{Verbatim}{frame = single, tabsize = 4, fontsize=\footnotesize}
+\renewcommand{\v}[1]{\boldsymbol{#1}}
+\newcommand\pkg[1]{\textsf{#1}}
+
+% 参考文献边距字体
+\setlength{\bibitemsep}{3bp}
+\renewcommand*{\bibfont}{\zihao{5}\linespread{1.27}\selectfont}
+
+%自定义
+\newcommand{\old}[1]{\textcolor{blue}{\sout{#1}}}
+\newcommand{\new}[1]{\textcolor{red}{#1}}
+
+\pkuthssinfo{
+    cthesisname = {博士学位论文},
+    thesiscover = {博士研究生学位论文},
+    ethesisname = {Doctor Thesis},
+    ctitle = {北京大学博士论文模板 zyz版},
+    etitle = {pkuthss\_zyz},
+    cauthor = {ZYZ先生}, eauthor = {Mr. ZYZ},
+    studentid = {4367497427},
+    % 具体时间以教务为准，初稿3月，送审4月，答辩5月，最终6月。
+    date = {\zhdigits{2024}\ \ 年\ \ \zhnumber{6}\ \ 月}, % June, 2022
+    school = {学院名},
+    cmajor = {二级学科}, emajor = {major},
+    direction = {研究方向},
+    mentorlines = {1}, % 导师个数
+    % 副教授 A.P. 讲师 Lec. 教授 Prof.
+    cmentor = {导师姓名\ \ 职称}, ementor = {Prof.\ Name},
+    ckeywords = {博士论文,北大,模板},
+    ekeywords = {PhD Thesis, Peking University, Template},
+    % 盲审模式参数, 需在documentclass增加blind
+    blindid = {XXXXXXXXX}, discipline = {XXXX}
+}
+\addbibresource{ref.bib}
+
+
+\begin{document}
+    \frontmatter
+    \pagestyle{empty}
+    \maketitle
+    \cleardoublepage
+    % 需替换门户版权声明pdf
+   \include{chap/copy}  
+    \cleardoublepage
+    \pagestyle{plain}
+    \setcounter{page}{0}
+    \pagenumbering{Roman}
+   \include{chap/abs}
+    \tableofcontents
+    %% 如有需要插入表格索引、插图索引
+    %\listoftables
+    %\listoffigures
+    %% 如有需要使用主要符号对照表
+    %\include{chap/deno}
+    
+    \mainmatter
+    \include{chap/chap1}
+    \include{chap/chap2}
+    \include{chap/chap3}   
+    \include{chap/chap4}
+    \include{chap/chap5}
+    \include{chap/chap6}
+    
+    \appendix
+    \include{chap/app1}
+    \printbibliography[heading = bibintoc]
+    % 如有需要使用研究生成果页
+    \include{chap/ach}
+
+   \backmatter
+   \include{chap/ack}
+    % 需替换门户原创页pdf/扫描pdf
+   \include{chap/origin}
+ 
+\end{document}
+
+% vim:ts=4:sw=4

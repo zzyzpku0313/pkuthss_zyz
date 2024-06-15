@@ -1,0 +1,32 @@
+\chapter{公式}
+\label{chap:equation}
+
+本章简要介绍公式使用的方法、问题和技巧。
+
+\section{示例}
+
+LaTex编排公式可以在句中插入公式（例如$1+1=2$），也可以使用\texttt{equation}环境编排公式，使用者需要对LaTex的公式语法有一定的了解。这里给出一个公式的例子\cite{Yao_2015}：
+\begin{equation}
+\label{eq:Vs_azi_aniso}
+    \begin{aligned}
+    \hat{\beta}_{\mathrm{SV}} &\approx V_{\mathrm{SV}}\left(1+\frac{G_c}{2L}\cos2\psi+\frac{G_s}{2L}\sin2\psi\right) \\
+    &=V_{\mathrm{SV}} \left[ 1+\Lambda_{\mathrm{SV}}\cos2(\psi-\phi_\mathrm{F}) \right]
+    \end{aligned}
+\end{equation}
+公式 \eqref{eq:Vs_azi_aniso} 展示了如何换行、如何对齐、如何使用加大的括号、如何打出约等号等操作。事实上，LaTex对公式的排版有很多技巧，使用者可以根据自己的需求查询相应用法。注意到这里使用\texttt{\string\eqref}引用，而非\texttt{\string\ref}（效果为公式 \ref{eq:Vs_azi_aniso}），前者会自动带括号，但括号是英文字体，后者只有数字，可以自己加中文括号。本人建议是哪个美观用哪个。
+
+\section{问题}
+
+LaTex在公式环境下，中文不一定能正确编译，所以尽量避免用中文。例如一些分段函数，可用“if”、“otherwise”代替“如果”、“其他”等条件。
+
+一些审稿人可能要求独占一行的公式后边也需要加入“,”或者“.”以表示公式也在一句话之中，这一点在北大论文模板中没有提到。本人的建议是如果要用就全部加上，而且加在公式的最后一个字符结束处。如果不用就都不加，因为公式往往会独占一行排列，自动断句，所以公式后有无标点并不影响阅读。
+
+\section{技巧}
+
+许多时候我们需要从已发表的论文中提取公式，转化为LaTex代码，如果全部手打是非常繁琐的。利用图片识别将公式转为代码的工具市面上有不少，这里推荐两个：
+
+\begin{enumerate}[itemindent=0.3em]     % 用enumerate环境可能需要控制缩进量
+    \item \texttt{mathpix}：识别公式准确，但有识别数量的免费限额，可能要收费使用。下载地址：https://mathpix.com/。
+    \item \texttt{simpletex}：识别公式基本准确，对“粗体”、“正体”等的识别相对较差（例如$x$、$\mathrm{x}$、$\mathbf{x}$），需手动调整，但免费。下载地址：https://simpletex.cn/。
+\end{enumerate}
+    
