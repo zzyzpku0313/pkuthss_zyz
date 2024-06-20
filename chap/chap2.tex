@@ -13,7 +13,7 @@
     \item \texttt{gbnamefmt=familyahead}：排版时姓在前名在后，类似于APA的样式；
     \item \texttt{gbtype=false}：不输出文献类型标识符。
     \item \texttt{maxcitenames=2,mincitenames=1}：超过\texttt{maxcitenames}个作者的文献，只输出\texttt{mincitenames}个作者，并添加“et al.”或“等”。
-    \item \texttt{uniquelist=false}：\texttt{uniquelist}用于正文中引用（标注）标签的作者列表控制（目的是消除歧义）。这里设置为\texttt{faluse}表示仅用一个作者作为文中的标注标签，如果遇到同姓作者同一年的文献，通过在年份后添加字母以区分。
+    \item \texttt{uniquelist=false}：\texttt{uniquelist}用于正文中引用（标注）标签的作者列表控制（目的是消除歧义）。这里设置为\texttt{false}表示仅用一个作者作为文中的标注标签，如果遇到同姓作者同一年的文献，通过在年份后添加字母以区分。
     \item \texttt{gbcitelabel=parensqj}：标注标签由全角圆括号包围。由于引用时会出现大量括号，该设置的目的是使正文中不会出现英文、中文括号混用的现象。
     \item 增加了中文文献用“和”、英文文献用“and”连接人名的设置。
 \end{itemize}
@@ -55,4 +55,4 @@
 
 使用LaTex可能会陷入一个误区，即所有问题可以通过代码解决。尤其是LaTex对参考文献排版有诸多便利之处，往往使人忽略一些简单的问题。本人建议在论文定稿前，对BibTex文件中的每条参考文献都人工检查并手动完善一遍，确保格式统一、没有排不出来的字符、排版时没有问题。
 
-举个例子，本人搜集文献信息一般是从期刊官网导出文献信息，再导入Endnote中。然而，同一作者在不同期刊官网导出的姓名可能不同，比如张一三发表的文献1在A期刊导出为\texttt{Zhang, Yi San}，文献2在B期刊导出为\texttt{Zhang, Y. S.}，文献3在C期刊可能导出为\texttt{Zhang Y.}，文献4在D期刊导出为\texttt{Zhang Yi-San}。于是，使用Endnote生成BibTex文件时，文献1$\sim$4中的张一三会被识别为不同的人，导致引用和排序时出现错误。因此，一定要手动检查所有参考文献，确保\texttt{author}一栏人名格式是统一的。
+举个例子，本人搜集文献信息一般是从期刊官网导出文献信息，再导入Endnote中。然而，同一作者在不同期刊官网导出的姓名可能不同，比如张一三发表的文献1在A期刊导出为\texttt{Zhang, Yi San}，文献2在B期刊导出为\texttt{Zhang, Y. S.}，文献3在C期刊可能导出为\texttt{Zhang, Y.}，文献4在D期刊导出为\texttt{Zhang, Yi-San}。于是，使用Endnote生成BibTex文件时，文献1$\sim$4中的张一三会被识别为不同的人，导致引用和排序时出现错误。因此，一定要手动检查所有参考文献，确保\texttt{author}一栏人名格式是统一的。
